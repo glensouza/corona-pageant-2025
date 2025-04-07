@@ -38,7 +38,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          platforms: linux/amd64
+          platforms: linux/arm64
           file: ./Corona.Pageant.Viewer/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
