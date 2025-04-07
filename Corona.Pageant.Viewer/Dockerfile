@@ -1,10 +1,11 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0-bookworm-slim-arm64v8 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+ARG TARGETARCH
 WORKDIR /src
 COPY . .
 RUN dotnet restore "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj"
-RUN dotnet publish "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj" -c Release -r linux-arm64 -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj" -c Release -o /app/publish --self-contained false
 
-FROM nginx:latest
+FROM nginx:stable
 EXPOSE 80
 WORKDIR /usr/share/nginx/html
 COPY --from=build /app/publish/wwwroot .
