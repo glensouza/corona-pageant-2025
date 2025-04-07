@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0-bookworm-slim-amd64 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0-bookworm-slim-arm64 AS build
 WORKDIR /src
 COPY . .
 RUN dotnet restore "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj"
