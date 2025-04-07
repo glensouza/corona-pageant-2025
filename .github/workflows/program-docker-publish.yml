@@ -40,6 +40,7 @@ jobs:
           images: glenster75/coronapageant25program
           tags: |
             type=semver,pattern={{version}}
+            latest
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
