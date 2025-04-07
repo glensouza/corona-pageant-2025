@@ -3,7 +3,7 @@ ARG TARGETARCH
 WORKDIR /src
 COPY . .
 RUN dotnet restore "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj"
-RUN dotnet publish "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj" -c Release -o /app/publish --self-contained false
+RUN dotnet publish "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj" -c Release -o /app/publish
 
 FROM nginx:stable
 EXPOSE 80
