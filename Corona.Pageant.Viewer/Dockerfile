@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0-noble-arm64v8mcr.microsoft.com/dotnet/sdk:9.0-noble-arm64v8 AS build
 WORKDIR /src
 COPY . .
 RUN dotnet restore "Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj"
