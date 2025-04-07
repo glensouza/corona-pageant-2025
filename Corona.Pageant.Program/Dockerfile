@@ -7,6 +7,7 @@ RUN dotnet publish "Corona.Pageant.Program/Corona.Pageant.Program.csproj" -c Rel
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:9.0
 ARG TARGETARCH
+EXPOSE 8085
 WORKDIR /app
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "Corona.Pageant.Program.dll"]

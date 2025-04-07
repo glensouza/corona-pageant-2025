@@ -6,7 +6,7 @@ RUN dotnet restore "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj"
 RUN dotnet publish "./Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj" -c Release -o /app/publish
 
 FROM nginx:stable
-EXPOSE 80
+EXPOSE 8086
 WORKDIR /usr/share/nginx/html
 COPY --from=build /app/publish/wwwroot .
 COPY Corona.Pageant.Viewer/nginx.conf /etc/nginx/nginx.conf

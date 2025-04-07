@@ -7,7 +7,7 @@ services:
     environment:
       - TZ=America/Los_Angeles
     ports:
-      - '8085:80'
+      - '8085:8085'
     restart: unless-stopped
   web:
     container_name: coronapageant25program
@@ -15,5 +15,5 @@ services:
     environment:
       - TZ=America/Los_Angeles
     ports:
-      - '8086:80'
+      - '8086:8086'
     restart: unless-stopped
