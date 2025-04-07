@@ -38,9 +38,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: glenster75/coronapageant25program
-          tags: |
-            type=semver,pattern={{version}}
-            latest
+          tags: latest
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -49,7 +47,7 @@ jobs:
           platforms: linux/arm64
           file: ./Corona.Pageant.Program/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }},glenster75/coronapageant25program:v1.0.${{ github.run_number }}
           labels: ${{ steps.meta.outputs.labels }}
 
   # run_onprem:
