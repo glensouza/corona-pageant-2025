@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  viewer:
+    container_name: coronapageant25viewer
+    image: glenster75/coronapageant25viewer
+    environment:
+      - TZ=America/Los_Angeles
+    ports:
+      - '8085:80'
+    restart: unless-stopped
+  web:
+    container_name: coronapageant25program
+    image: glenster75/coronapageant25program
+    environment:
+      - TZ=America/Los_Angeles
+    ports:
+      - '8086:80'
+    restart: unless-stopped
