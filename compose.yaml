@@ -1,0 +1,6 @@
+﻿services:
+  corona.pageant.program:
+    image: corona.pageant.program
+    build:
+      context: .
+      dockerfile: Corona.Pageant.Program/Dockerfile
