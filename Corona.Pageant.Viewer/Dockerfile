@@ -5,7 +5,7 @@ RUN dotnet restore "Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj"
 RUN dotnet build "Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj" -c Release -o /app/build
 RUN dotnet publish "Corona.Pageant.Viewer/Corona.Pageant.Viewer.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-FROM nginx:linux/arm/v5
+FROM nginx:latest
 EXPOSE 80
 WORKDIR /usr/share/nginx/html
 COPY --from=build /app/publish/wwwroot .
