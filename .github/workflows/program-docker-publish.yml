@@ -38,7 +38,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: glenster75/coronapageant25program
-          tags: latest
+          tags: |
+            type=semver,pattern={{version}}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
