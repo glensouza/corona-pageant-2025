@@ -6,8 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.WebHost.UseUrls("http://0.0.0.0:8085");
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,4 +21,4 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
-app.Run();
+app.Run("http://*:8085");
