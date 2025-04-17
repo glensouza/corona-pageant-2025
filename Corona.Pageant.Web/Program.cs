@@ -1,12 +1,21 @@
 using Corona.Pageant.Web.Components;
+using Corona.Pageant.Web.Database;
+using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+string connectionString = builder.Configuration.GetConnectionString("PageantDb") ?? "Data Source=pageant.db";
+builder.Services.AddSqlite<PageantDb>(connectionString)
+    .AddDatabaseDeveloperPageExceptionFilter();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
+
+await using PageantDb db = app.Services.CreateScope().ServiceProvider.GetRequiredService<PageantDb>();
+await db.Database.MigrateAsync();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
