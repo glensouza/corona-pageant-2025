@@ -1,6 +1,11 @@
-﻿services:
-  corona.pageant.program:
-    image: corona.pageant.program
-    build:
-      context: .
-      dockerfile: Corona.Pageant.Program/Dockerfile
+﻿version: '3'
+
+services:
+  web:
+    container_name: coronapageant25
+    image: glenster75/corona.pageant.web
+    environment:
+      - TZ=America/Los_Angeles
+    ports:
+      - '80:8080'
+    restart: unless-stopped

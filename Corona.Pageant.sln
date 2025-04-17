@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corona.Pageant.Viewer", "Corona.Pageant.Viewer\Corona.Pageant.Viewer.csproj", "{BEBB47D5-2F89-4CD3-BFFB-E040BCB7D842}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corona.Pageant.Web", "Corona.Pageant.Web\Corona.Pageant.Web.csproj", "{1DE9B58E-89E4-417D-B7D8-A3458B5E2E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corona.Pageant.Program", "Corona.Pageant.Program\Corona.Pageant.Program.csproj", "{7829ED32-A368-459B-BCCF-9E7DE73CF267}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0161A30-ABB5-4932-AD4F-A7C39A5EBDC5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4FDE96FF-C645-4C62-91B3-17CBCB0F0E7E}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
 	EndProjectSection
@@ -15,13 +13,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BEBB47D5-2F89-4CD3-BFFB-E040BCB7D842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEBB47D5-2F89-4CD3-BFFB-E040BCB7D842}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEBB47D5-2F89-4CD3-BFFB-E040BCB7D842}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEBB47D5-2F89-4CD3-BFFB-E040BCB7D842}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7829ED32-A368-459B-BCCF-9E7DE73CF267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7829ED32-A368-459B-BCCF-9E7DE73CF267}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7829ED32-A368-459B-BCCF-9E7DE73CF267}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7829ED32-A368-459B-BCCF-9E7DE73CF267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE9B58E-89E4-417D-B7D8-A3458B5E2E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE9B58E-89E4-417D-B7D8-A3458B5E2E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE9B58E-89E4-417D-B7D8-A3458B5E2E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE9B58E-89E4-417D-B7D8-A3458B5E2E1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
