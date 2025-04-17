@@ -1,8 +1,6 @@
 # corona-pageant-2025
 
-[![Web Docker Image CI](https://github.com/glensouza/corona-pageant-2023/actions/workflows/web-docker-publish.yml/badge.svg)](https://github.com/glensouza/corona-pageant-2023/actions/workflows/web-docker-publish.yml)
-
-[![Web Viewer Docker Image CI](https://github.com/glensouza/corona-pageant-2023/actions/workflows/viewer-docker-publish.yml/badge.svg)](https://github.com/glensouza/corona-pageant-2023/actions/workflows/viewer-docker-publish.yml)
+[![Docker Publish CI](https://github.com/glensouza/corona-pageant-2025/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/glensouza/corona-pageant-2025/actions/workflows/docker-publish.yml)
 
 API Swagger:
 
