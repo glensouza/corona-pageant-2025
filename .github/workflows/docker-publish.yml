@@ -1,13 +1,12 @@
-name: Web Viewer Docker Image CI
+name: Program Docker Image CI
 
 on:
   push:
     branches:
       - "main" 
     paths:
-      - "Corona.Pageant.Viewer/**"
-      - "Corona.Pageant.Shared/**"
-      - ".github/workflows/viewer-docker-publish.yml"
+      - "Corona.Pageant.Web/**"
+      - ".github/workflows/docker-publish.yml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -20,7 +19,7 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-      
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       
@@ -37,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: glenster75/coronapageant25viewer
+          images: glenster75/coronapageant25
           tags: latest
       
       - name: Build and push Docker image
@@ -45,9 +44,9 @@ jobs:
         with:
           context: .
           platforms: linux/arm64
-          file: ./Corona.Pageant.Viewer/Dockerfile
+          file: ./Corona.Pageant.Web/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }},glenster75/coronapageant25viewer:v1.0.${{ github.run_number }}
+          tags: ${{ steps.meta.outputs.tags }},glenster75/coronapageant25:v1.1.${{ github.run_number }}
           labels: ${{ steps.meta.outputs.labels }}
 
   # run_onprem:
@@ -55,12 +54,6 @@ jobs:
   #   steps:
   #     - name: Check out the repo
   #       uses: actions/checkout@v3
-
-  #     - name: Log in to Docker Hub
-  #       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
-  #       with:
-  #         username: glenster75
-  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
   #     - name: Publish latest containers
   #       run: |
